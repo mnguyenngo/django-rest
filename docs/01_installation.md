@@ -123,6 +123,12 @@ INSTALLED_APPS = [
 ]
 ```
 
+### Run the API to check out the progress
+
+```python
+python manage.py runserver
+```
+
 ## References
 
 1. [Let’s build an API with Django REST Framework — Part 1](https://medium.com/backticks-tildes/lets-build-an-api-with-django-rest-framework-32fcf40231e5)
