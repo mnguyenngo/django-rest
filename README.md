@@ -1,2 +1,4 @@
 # django-rest
-Django REST API 
+Minimal quickstart for a Django REST API
+
+[Documentation](./docs/README.md)
