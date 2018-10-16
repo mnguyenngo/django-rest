@@ -48,12 +48,12 @@ pytz==2018.5
 ### Project Setup
 
 ```bash
-django-admin.py startproject my-api .
+django-admin.py startproject api .
 ```
 
 ```bash
-cd my-api
-django-admin.py startapp my-app
+cd api
+django-admin.py startapp myapp
 ```
 
 ### File Structure
@@ -72,8 +72,8 @@ Expected output:
 django-rest
 ├── LICENSE
 ├── README.md
-├── my-api
-│   ├── my-api
+├── api
+│   ├── api
 │   │   ├── __init__.py
 │   │   ├── __pycache__
 │   │   │   ├── __init__.cpython-36.pyc
@@ -82,7 +82,7 @@ django-rest
 │   │   ├── settings.py
 │   │   ├── urls.py
 │   │   └── wsgi.py
-│   ├── my-app
+│   ├── myapp
 │   │   ├── __init__.py
 │   │   ├── admin.py
 │   │   ├── apps.py
@@ -113,27 +113,13 @@ python manage.py createsuperuser --email admin@example.com --username admin
 
 __This will prompt you to enter the password for the superuser.__
 
-### Add 'rest_framework' and 'my-app' to 'INSTALLED_APPS' in my-api/settings.py
+### Add 'rest_framework' and 'myapp' to 'INSTALLED_APPS' in api/settings.py
 
 ```python
 INSTALLED_APPS = [
     ...
     'rest_framework',
-    'my-app'
-]
-```
-
-### Add urls for the app
-
-Import `include` from `django.urls` and add the paths for my-app to `urlpatterns`
-
-```python
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('my-app.urls'))
+    'myapp'
 ]
 ```
 
