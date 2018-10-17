@@ -12,11 +12,32 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+
+
+Django Admin Dashboard
+----------------------
+
+The following is the syntax to enable the admin dashboard:
+
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.urls'))
+]
+
+"""
+
+from django.conf.urls import url, include
+from rest_framework import routers
+from myapp import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'tasks', views.TaskViewSet)
+
+urlpatterns = [
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/',
+        include('rest_framework.urls', namespace='rest_framework'))
 ]
