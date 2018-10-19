@@ -33,10 +33,13 @@ class GetAllTasksTest(BaseViewTest):
         exist when we make a GET request to the tasks/ endpoint
         """
         # hit the API endpoint
-        response = self.client.get("/tasks/?format=json")
+        response = self.client.get("/tasks/", format='json')
 
         # fetch the data from db
         expected = Task.objects.all()
         serialized = TaskSerializer(expected, many=True)
         self.assertEqual(response.data, serialized.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn(
+            {'pk': 1, 'assignee': "Nguyen", 'title': "walk dog"},
+            response.data)
