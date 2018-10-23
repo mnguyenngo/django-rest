@@ -37,12 +37,19 @@ pip install djangorestframework
 pip freeze -l > requirements.txt
 ```
 
-If you open the requirements.txt file, you will see the following:
+If you open the `requirements.txt` file, you will see the following:
 
 ```bash
 Django==2.1.2
 djangorestframework==3.8.2
 pytz==2018.5
+```
+
+You should update the `requirements.txt` file whenever you install a new package.
+
+Also, make sure to add the `env/` directory to `.gitignore` if you are using Github or similar.
+
+```bash
 ```
 
 ### Project Setup
