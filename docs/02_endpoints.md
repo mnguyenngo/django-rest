@@ -246,6 +246,19 @@ urlpatterns = [
 ]
 ```
 
+#### Migrate Your Resource to the Database
+
+After setting up the resource, you will have to sync the database by running the migration commands:
+
+```bash
+python manage.py makemigrations
+```
+
+```bash
+python manage.py migrate
+```
+
+
 #### Check Your Progress
 
 In the main `api/` directory, run the following command in the terminal:
