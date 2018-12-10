@@ -278,7 +278,7 @@ python manage.py test
 ```
 
 If the test is successful, the output in the terminal should look like this:
-Â
+
 ```bash
 $ python manage.py test
 Creating test database for alias 'default'...
